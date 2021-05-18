@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Module that prints 2 squares with #"""
+
+
 class Square:
     """Square with private instance attribute and instantiation"""
 
