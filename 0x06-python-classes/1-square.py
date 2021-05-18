@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 class Square:
-    """Square  private instance attribute"""
-    def __init__(self, size):
-        """Initialize data"""
-        self.__size = size
-        """Private instantiation of size"""
+    __size = 0
+
+    def __init__(self, new_size=0):
+        """Initialize class."""
+        if new_size is not 0:
+            self.__size = new_size
