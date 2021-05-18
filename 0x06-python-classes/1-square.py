@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-class Square:
-    __size = 0
+"""Module to create __init__ method and .__size"""
 
-    def __init__(self, new_size=0):
-        """Initialize class."""
-        if new_size is not 0:
-            self.__size = new_size
+
+class Square:
+    """Square with private instance attribute"""
+    def __init__(self, size):
+        """Initialize data"""
+        self.__size = size
+        """Private instantiation of size"""
