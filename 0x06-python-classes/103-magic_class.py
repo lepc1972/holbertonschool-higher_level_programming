@@ -24,9 +24,9 @@ class MagicClass:
         """
         return self.__radius ** 2 * math.pi
 
-    def circumference(self):
-        """get this circle's circumference
+    def circunference(self):
+        """get this circle's circunference
         Returns:
-            float: this circle's circumference
+            float: this circle's circunference
         """
         return 2 * math.pi * self.__radius
