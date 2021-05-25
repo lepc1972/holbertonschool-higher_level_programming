@@ -1,0 +1,37 @@
+The ``2-matrix_divided`` doctest test
+
+Import the function from the module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+test module documentation:
+    >>> __import__('2-matrix_divided').__doc__ != None
+    True
+
+test function documentation:
+    >>> matrix_divided.__doc__ != None
+    True
+
+test positive numbers:
+    >>> matrix_divided([[2, 3, 4], [2, 3, 4]], 3)
+    [[0.67, 1.0, 1.33], [0.67, 1.0, 1.33]]
+    >>> matrix_divided([[2, 3, 4], [2, 3, 4]], 10)
+    [[0.2, 0.3, 0.4], [0.2, 0.3, 0.4]]
+    >>> matrix_divided([[2, 3, 4], [2, 3, 4]], 150)
+    [[0.01, 0.02, 0.03], [0.01, 0.02, 0.03]]
+
+test negative numbers:
+    >>> matrix_divided([[2, 3, 4], [2, 3, 4]], -3)
+    [[-0.67, -1.0, -1.33], [-0.67, -1.0, -1.33]]
+    >>> matrix_divided([[2, 3, 4], [2, 3, 4]], -10)
+    [[-0.2, -0.3, -0.4], [-0.2, -0.3, -0.4]]
+    >>> matrix_divided([[-2, -3, -4], [-2, -3, -4]], -150)
+    [[0.01, 0.02, 0.03], [0.01, 0.02, 0.03]]
+
+test floats:
+    >>> matrix_divided([[2, 3, 4], [2, 3, 4]], 5.5)
+    [[0.36, 0.55, 0.73], [0.36, 0.55, 0.73]]
+
+test division by zero:
+    >>> matrix_divided([[2, 3, 4], [2, 3, 4]], 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
