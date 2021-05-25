@@ -29,7 +29,7 @@ def matrix_divided(matrix, div):
             raise ZeroDivisionError('division by zero')
 
         matrix_division = []
-        
+
     for i in matrix:
         row = []
         for j in i:
