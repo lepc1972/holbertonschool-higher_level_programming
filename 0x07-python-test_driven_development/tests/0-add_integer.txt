@@ -1,0 +1,49 @@
+Function Check ```add_integer```
+
+
+testing documentation module:
+    >>> __import__('0-add_integer').__doc__ != None
+    True
+
+Import add_integer function:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+testing functions documentation:
+    >>> add_integer.__doc__ != None
+    True
+
+Positive integer test:
+
+    >>> add_integer(2, 1)
+    3
+    >>> add_integer(90, 8)
+    98
+    >>> add_integer(100)
+    198
+    >>> add_integer(0, 0)
+    0
+    >>> add_integer(6)
+    104
+
+Negative integer test:
+    >>> add_integer(-9, 7)
+    -2
+    >>> add_integer(-8, -2)
+    -10
+    >>> add_integer(8, -7)
+    1
+    >>> add_integer(-4)
+    94
+
+float test:
+    >>> add_integer(-12.3)
+    85
+    >>> add_integer(12.3, 8.9)
+    21
+    >>> add_integer(6.4, -9.7)
+    -3
+    >>> add_integer(-0.1, 7.2)
+    7
+
+
+
