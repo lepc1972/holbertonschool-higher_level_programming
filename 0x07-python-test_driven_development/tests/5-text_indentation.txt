@@ -1,0 +1,96 @@
+The ``5-text_indentation`` doctest
+
+Import function from module:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+test function documentation:
+    >>> text_indentation.__doc__ != None
+    True
+
+test module documentation:
+    >>> __import__('5-text_indentation').__doc__ != None
+    True
+
+
+Test empty string:
+	>>> text_indentation("")
+
+Test string of spaces:
+	>>> text_indentation("     ") 
+
+Test none:
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+Test string without any special characters:
+	>>> text_indentation("Holberton")
+	Holberton
+
+Test two strings:
+	>>> text_indentation("Hello" "World")
+	HelloWorld
+
+Test string with period:
+	>>> text_indentation("Hello.")
+	Hello.
+	<BLANKLINE>
+
+Test string with question mark:
+	>>> text_indentation("Hello?")
+	Hello?
+	<BLANKLINE>
+
+Test string with whitespace:
+	>>> text_indentation("     Hi")
+	Hi
+
+Test string with trailing space:
+	>>> text_indentation("Hi     ")
+	Hi
+
+Test string inside of indent characters:
+	>>> text_indentation("?Hello?")
+	?
+	<BLANKLINE>
+	Hello?
+	<BLANKLINE>
+
+Test leading space, indent character and trailing space:
+	>>> text_indentation("     ?     ")
+	?
+	<BLANKLINE>
+
+Test newline:
+	>>> text_indentation("\n")
+	<BLANKLINE>
+
+Test newlines:
+	>>> text_indentation("\n\n")
+	<BLANKLINE>
+	<BLANKLINE>
+
+Test string then newline:
+	>>> text_indentation("Hi\n\n")
+	Hi
+	<BLANKLINE>
+
+Test all new line characters:
+	>>> text_indentation("Hi:how.are.you?")
+	Hi:
+	<BLANKLINE>
+	how.
+	<BLANKLINE>
+	are.
+	<BLANKLINE>
+	you?
+	<BLANKLINE>
+
+Test only special characters:
+	>>> text_indentation(":.?")
+	:
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
