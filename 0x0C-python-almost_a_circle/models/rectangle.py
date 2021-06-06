@@ -54,10 +54,10 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         """width setter"""
-        if width <= 0:
-            raise ValueError('width must be > 0')
         if type(width) is not int:
             raise TypeError('width must be an integer')
+        if width <= 0:
+            raise ValueError('width must be > 0')
         self.__width = width
 
     @height.setter
