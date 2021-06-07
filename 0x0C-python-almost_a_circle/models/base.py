@@ -47,7 +47,6 @@ class Base():
             load = json.loads(json_string)
             return load
 
-
     @classmethod
     def create(cls, **dictionary):
         """
@@ -63,17 +62,11 @@ class Base():
 
     @classmethod
     def load_from_file(cls):
-        name = cls.__name__ + '.json'
-        emptylist = []
-        list3 = []
-        try:
-            with open(name, mode='r', encoding='UTF8') as xfile:
-                aux = xfile.read()
-                emptylist = cls.from_json_string(aux)
-                """List of dicts"""
-                for elem in emptylist:
-                    aux2 = cls.create(**elem)
-                    list3.append(aux2)
-                return list3
-        except FileNotFoundError:
-            return emptylist
+        """give us list of instances"""
+        return_dict = []
+        if os.path.exists(cls.__name__ + ".json"):
+            with open(cls.__name__ + ".json", 'r', encoding='utf-8') as f:
+                list_dict = cls.from_json_string(f.read())
+                for dict in list_dict:
+                    return_dict.append(cls.create(**dict))
+        return (return_dict)
