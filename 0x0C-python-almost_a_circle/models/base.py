@@ -4,6 +4,7 @@
 
 import json
 import os
+import models
 
 
 class Base():
@@ -45,3 +46,17 @@ class Base():
         else:
             load = json.loads(json_string)
             return load
+
+    
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Returns:
+            An instance with all attributes already set.
+        """
+        if cls.__name__ == 'Rectangle':
+            dummy_shape = cls(3, 7, 5, 8)
+        if cls.__name__ == 'Square':
+            dummy_shape = cls(3, 7, 5)
+        dummy_shape.update(dummy_shape, **dictionary)
+        return dummy_shape
