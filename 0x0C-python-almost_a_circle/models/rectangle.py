@@ -81,7 +81,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         """y setter"""
-        if y <= 0:
+        if y < 0:
             raise ValueError('y must be > 0')
         if type(y) is not int:
             raise TypeError('y must be an integer')
@@ -112,8 +112,7 @@ class Rectangle(Base):
                 setattr(self, attributes_list[i], args[i])
         elif kwargs is not None:
             for key, value in kwargs.items():
-                if hasattr(self, key):
-                        setattr(self, key, value)
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """returns dictionary representation of a Rectangle"""

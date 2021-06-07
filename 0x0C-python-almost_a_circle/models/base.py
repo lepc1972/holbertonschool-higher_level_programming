@@ -47,7 +47,7 @@ class Base():
             load = json.loads(json_string)
             return load
 
-    
+
     @classmethod
     def create(cls, **dictionary):
         """
@@ -58,7 +58,7 @@ class Base():
             dummy_shape = cls(3, 7, 5, 8)
         if cls.__name__ == 'Square':
             dummy_shape = cls(3, 7, 5)
-        dummy_shape.update(dummy_shape, **dictionary)
+        dummy_shape.update(**dictionary)
         return dummy_shape
 
     @classmethod
