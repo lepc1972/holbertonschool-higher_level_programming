@@ -7,8 +7,6 @@ import os
 import models
 import csv
 
-
-
 class Base():
     """Main class Base"""
     __nb_objects = 0
