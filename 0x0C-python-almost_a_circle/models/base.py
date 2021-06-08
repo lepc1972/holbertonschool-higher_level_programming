@@ -5,6 +5,8 @@
 import json
 import os
 import models
+import csv
+
 
 
 class Base():
@@ -70,3 +72,35 @@ class Base():
                 for dict in list_dict:
                     return_dict.append(cls.create(**dict))
         return (return_dict)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Load a list of instances from a CSV table"""
+
+        if not os.path.exists(cls.__name__ + '.csv'):
+            return []
+        if cls.__name__ == 'Rectangle':
+            attrs = ('id', 'width', 'height', 'x', 'y')
+        elif cls.__name__ == 'Square':
+            attrs = ('id', 'size', 'x', 'y')
+        with open(cls.__name__ + '.csv', 'rt', newline='') as file:
+            reader = csv.reader(file)
+            objects = list(reader)
+        objects = ((int(i) for i in l) for l in objects)
+        return [cls.create(**dict(zip(attrs, l))) for l in objects]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save a CSV version of the objects in list_objs for a class"""
+
+        if list_objs is None:
+            list_objs = []
+        if cls.__name__ == 'Rectangle':
+            attrs = ('id', 'width', 'height', 'x', 'y')
+        elif cls.__name__ == 'Square':
+            attrs = ('id', 'size', 'x', 'y')
+        list_objs = ([getattr(o, a) for a in attrs] for o in list_objs)
+        with open(cls.__name__ + '.csv', 'wt', newline='') as file:
+            writer = csv.writer(file)
+            for row in list_objs:
+                writer.writerow(row)
