@@ -1,11 +1,11 @@
 #!/usr/bin/node
 
-const my_list = process.argv.slice(2);
+const lista = process.argv.slice(2);
 
-if (my_list.length <= 1) {
+if (lista.length <= 1) {
   console.log('0');
 } else {
-  my_list.sort((a, b) => a - b);
-  const len = my_list.length;
-  console.log(my_list[len - 2]);
+  lista.sort((a, b) => a - b);
+  const len = lista.length;
+  console.log(lista[len - 2]);
 }
