@@ -15,8 +15,8 @@ if __name__ == "__main__":
 
     engine = create_engine(connection.format(user_name, password, db_name),
                            pool_pre_ping=True)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    Ses = sessionmaker(bind=engine)
+    session = Ses()
     search = session.query(State).order_by(State.id).all()
     for some in search:
         print("{}: {}".format(some.id, some.name))
