@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Script to change State with id 2 to New Mexcio'''
+'''delete states that contains letter a'''
 
 from sys import argv
 from model_state import Base, State
