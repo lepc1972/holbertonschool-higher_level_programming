@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script that show response after send the request"""
+"""send request and show response"""
 import requests
 import sys
 
