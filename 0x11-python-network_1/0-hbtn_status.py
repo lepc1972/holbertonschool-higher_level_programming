@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Module for fetching with urllib'''
+'''urllib for url status'''
 import urllib.request
 
 if __name__ == "__main__":
